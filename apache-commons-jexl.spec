@@ -2,7 +2,7 @@
 
 Name:           apache-%{jarname}
 Version:        2.0.1
-Release:        5
+Release:        4
 Summary:        Java Expression Language (JEXL)
 
 Group:          Development/Java
@@ -13,7 +13,7 @@ Source0:        http://www.apache.org/dist/commons/jexl/source/%{jarname}-%{vers
 Patch0:         %{name}-2.0.1-bsf.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires:  jpackage-utils >= 0:1.7.5
+BuildRequires:  jpackage-utils
 BuildRequires:  java-devel >= 0:1.6.0
 BuildRequires:  apache-commons-parent
 BuildRequires:  maven-release-plugin
@@ -21,7 +21,7 @@ BuildRequires:  javacc-maven-plugin
 
 BuildArch:      noarch
 
-Requires:       jpackage-utils >= 0:1.7.5
+Requires:       jpackage-utils
 Requires:       java
 Provides:       %{jarname} = %{version}-%{release}
 
@@ -43,7 +43,7 @@ needed Velocity-ish method access, it just had to have it.
 %package javadoc
 Summary:        Javadocs for %{name}
 Group:          Development/Java
-Requires:       jpackage-utils >= 0:1.7.5
+Requires:       jpackage-utils
 Provides:       %{jarname}-javadoc = %{version}-%{release}
 
 %description javadoc
