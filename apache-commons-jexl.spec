@@ -68,25 +68,25 @@ install javadoc:javadoc
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
-mkdir -p $RPM_BUILD_ROOT%{_javadir}
-cp target/%{jarname}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}-%{version}.jar
-ln -s %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
-ln -s %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{jarname}.jar
-ln -s %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{jarname}-%{version}.jar
+mkdir -p %{buildroot}%{_javadir}
+cp target/%{jarname}-%{version}.jar %{buildroot}%{_javadir}/%{name}-%{version}.jar
+ln -s %{name}-%{version}.jar %{buildroot}%{_javadir}/%{name}.jar
+ln -s %{name}-%{version}.jar %{buildroot}%{_javadir}/%{jarname}.jar
+ln -s %{name}-%{version}.jar %{buildroot}%{_javadir}/%{jarname}-%{version}.jar
 
-mkdir -p $RPM_BUILD_ROOT%{_javadocdir}
+mkdir -p %{buildroot}%{_javadocdir}
 cp -rp target/site/apidocs \
-$RPM_BUILD_ROOT%{_javadocdir}/%{name}
+%{buildroot}%{_javadocdir}/%{name}
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/maven2/poms
-cp -p pom.xml $RPM_BUILD_ROOT/%{_datadir}/maven2/poms/JPP-%{name}.pom
+mkdir -p %{buildroot}%{_datadir}/maven2/poms
+cp -p pom.xml %{buildroot}/%{_datadir}/maven2/poms/JPP-%{name}.pom
 %add_to_maven_depmap org.apache.commons %{jarname} %{version} JPP %{name}
 
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 
 %post
