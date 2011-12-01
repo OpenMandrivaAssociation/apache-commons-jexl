@@ -2,7 +2,7 @@
 
 Name:           apache-%{jarname}
 Version:        2.0.1
-Release:        6
+Release:        7
 Summary:        Java Expression Language (JEXL)
 
 Group:          Development/Java
