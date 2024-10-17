@@ -8,7 +8,7 @@ Summary:        Java Expression Language (JEXL)
 
 
 License:        ASL 2.0
-URL:            http://commons.apache.org/jexl
+URL:            https://commons.apache.org/jexl
 Source0:        http://www.apache.org/dist/commons/jexl/source/%{jarname}-%{version}-src.tar.gz
 # Patch to fix test failure with junit 4.11
 Patch0:         001-Fix-tests.patch
